@@ -1,18 +1,34 @@
-### Customer & Purchases API
+# Customer & Purchases API
 
-# Design of customer purchase app using Django Rest Framework (DRF)
+1. Design of customer purchase app using Django Rest Framework (DRF)
 
 **Models:**
 
-- Customer
-- Purchase
+- Customers
+- Purchases
 
 **Views:**
 
-- CustomerViewSet
-- PurchaseViewSet
+- CustomerCreateListViewSet
 
 **Urls:**
 
 - {BASE_URL}/v1/customer
-- {BASE_URL}/v1/purchase
+
+2. Use CLI command
+
+**Send payload from csv**
+python \_src/purchase_api_cli.py .\data\customers.csv .\data\purchases.csv "http://127.0.0.1:8000/v1/customers"
+
+3. Manage your data
+
+**Send payload from json**
+_src/post_customer.sh_
+
+**Scripts to manage your objects**
+_src/dutyfree_api/delete_all_objects.py_
+_src/dutyfree_api/list_all_objects.py_
+
+4. Read logs
+
+_src/dutyfree_api/debug.log_
