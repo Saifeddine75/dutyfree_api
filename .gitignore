@@ -1,0 +1,10 @@
+.env
+
+__pycache__/
+*.pyc
+*/migrations
+
+# Only for Development
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py

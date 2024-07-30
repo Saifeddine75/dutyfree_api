@@ -1,0 +1,18 @@
+### Customer & Purchases API
+
+# Design of customer purchase app using Django Rest Framework (DRF)
+
+**Models:**
+
+- Customer
+- Purchase
+
+**Views:**
+
+- CustomerViewSet
+- PurchaseViewSet
+
+**Urls:**
+
+- {BASE_URL}/v1/customer
+- {BASE_URL}/v1/purchase
