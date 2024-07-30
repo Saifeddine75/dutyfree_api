@@ -1,11 +1,6 @@
-from django.contrib import admin
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from purchase.views import CustomerViewSet
-
-router = DefaultRouter()
-router.register(r'customers', CustomerViewSet)
+from django.urls import path
+from purchase.views import CustomerCreateListAPIView
 
 urlpatterns = [
-    path('v1/', include(router.urls))
+    path('customers/', CustomerCreateListAPIView.as_view(), name='customer-create-list'),
 ]
