@@ -1,0 +1,29 @@
+curl -X POST http://127.0.0.1:8000/v1/customers/ -H "Content-Type: application/json" -d '{
+    "salutation": 1,
+    "last_name": "Thomas",
+    "first_name": "Muller",
+    "email": "thomas.muller@example.com",
+    "purchases": [
+        {
+            "product_id": "45",
+            "price": 10,
+            "currency": "dollars",
+            "quantity": 1,
+            "purchased_at": "YYYY-MM-DD"
+        },
+        {
+            "product_id": "131",
+            "price": 10,
+            "currency": "dollars",
+            "quantity": 1,
+            "purchased_at": "YYYY-MM-DD"
+        }
+    ]
+}
+
+
+
+
+
+
+'
