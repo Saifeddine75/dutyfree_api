@@ -19,6 +19,7 @@ The Customer & Purchases API is designed to manage customer and purchase data. I
 
 - **Base URL**: `http://yourhostname.com/v1/`
 - **Customer Endpoint**: `http://yourhostname.com/v1/customers/`
+- **Customer Test Endpoint**: `http://127.0.0.1:8000/v1/customers/`
 
 ## 2. CLI Commands
 
@@ -27,7 +28,7 @@ The Customer & Purchases API is designed to manage customer and purchase data. I
 You can upload data from CSV files using the CLI. Use the following command to send customer and purchase data:
 
 ```bash
-python purchase_api_cli.py data/customers.csv data/purchases.csv "http://127.0.0.1:8000/v1/customers"
+python purchase_api_cli.py data/customers.csv data/purchases.csv "http://127.0.0.1:8000/v1/customers/"
 ```
 
 **Send payload from json**
