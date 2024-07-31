@@ -21,6 +21,9 @@ The Customer & Purchases API is designed to manage customer and purchase data. I
 - **Customer Endpoint**: `http://yourhostname.com/v1/customers/`
 - **Customer Test Endpoint**: `http://127.0.0.1:8000/v1/customers/`
 
+### Get started
+`python manage.py runserver`
+
 ## 2. CLI Commands
 
 **Send Payload from CSV**
@@ -48,6 +51,6 @@ python dutyfree_api/delete_all_objects.py_
 - **Log path**: `dutyfree_api/debug.log`
 
 ## 5. Minor issues
-- **Remove title from payload**
+- **Title in payload**
 - **Fix date format for the field *purchased_at***
 - **Fix hostname and routers**
