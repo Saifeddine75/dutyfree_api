@@ -1,34 +1,52 @@
 # Customer & Purchases API
 
-1. Design of customer purchase app using Django Rest Framework (DRF)
+Welcome to the Customer & Purchases API documentation. This API is built using Django REST Framework (DRF) and allows for managing customer and purchase data effectively.
 
-**Models:**
+## 1. Overview
 
-- Customers
-- Purchases
+The Customer & Purchases API is designed to manage customer and purchase data. It provides endpoints to create and list customers and handle their purchases.
 
-**Views:**
+### **Models**
 
-- CustomerCreateListViewSet
+- **Customer**: Represents a customer in the system.
+- **Purchase**: Represents a purchase made by a customer.
 
-**Urls:**
+### **Views**
 
-- {BASE_URL}/v1/customer
+- **CustomerCreateListViewSet**: Handles creating new customers and listing existing ones.
 
-2. Use CLI command
+### **API Endpoints**
 
-**Send payload from csv**
-python \_src/purchase_api_cli.py .\data\customers.csv .\data\purchases.csv "http://127.0.0.1:8000/v1/customers"
+- **Base URL**: `http://yourhostname.com/v1/`
+- **Customer Endpoint**: `http://yourhostname.com/v1/customers/`
 
-3. Manage your data
+## 2. CLI Commands
+
+**Send Payload from CSV**
+
+You can upload data from CSV files using the CLI. Use the following command to send customer and purchase data:
+
+```bash
+python purchase_api_cli.py data/customers.csv data/purchases.csv "http://127.0.0.1:8000/v1/customers"
+```
 
 **Send payload from json**
-_src/post_customer.sh_
+Excecute following script: `./post_customer.sh_`
+
+## 3. Manage your database
 
 **Scripts to manage your objects**
-_src/dutyfree_api/delete_all_objects.py_
-_src/dutyfree_api/list_all_objects.py_
+```bash
+# List all database objects
+python dutyfree_api/list_all_objects.py_
+# Clean all database objects
+python dutyfree_api/delete_all_objects.py_
+```
 
-4. Read logs
+## 4. Read logs
+- **Log path**: `dutyfree_api/debug.log`
 
-_src/dutyfree_api/debug.log_
+## 5. Minor issues
+- **Remove title from payload**
+- **Fix date format for the field *purchased_at***
+- **Fix hostname and routers**
