@@ -30,9 +30,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 if DEBUG:
-    BASE_URL = os.getenv('BASE_URL', 'https://yourhostname.com/')
+    BASE_URL = 'http://127.0.0.1:8000/'
 else:
-    BASE_URL = os.getenv('BASE_URL', 'http://127.0.0.1:8000/')
+    BASE_URL = os.getenv('BASE_URL', 'https://yourhostname.com/')
 
 
 # Application definition
