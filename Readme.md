@@ -17,15 +17,17 @@ The Customer & Purchases API is designed to manage customer and purchase data. I
 
 ### **API Endpoints**
 
-- **Base URL**: `http://yourhostname.com/v1/`
-- **Customer Endpoint**: `http://yourhostname.com/v1/customers/`
+- **Base URL**: `https://yourhostname.com/v1/`
+- **Customer Endpoint**: `https://yourhostname.com/v1/customers/`
 - **Customer Test Endpoint**: `http://127.0.0.1:8000/v1/customers/`
+
+_For our test we will use the Customer Test Endpoint but if we deploy the Customer Endpoint will be used_
 
 ### **Get started**
 
-#### 1) Create your folder project
+#### 1) Open your folder project
 
-`mkdir -p dutyfree/src/`
+`cd dutyfree_api/src/`
 
 #### 2) Create et activate virtual env
 
@@ -65,4 +67,4 @@ You can upload data from CSV files using the CLI. Use the following command to s
 
 ## 5. Minor issues
 
-- **Fix hostname and routers**
+- **Fix hostname and routers to be able to use **
