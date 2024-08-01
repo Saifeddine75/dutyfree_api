@@ -67,4 +67,4 @@ You can upload data from CSV files using the CLI. Use the following command to s
 
 ## 5. Minor issues
 
-- **Fix hostname and routers to be able to use **
+- **Test production host url**
