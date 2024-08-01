@@ -24,18 +24,21 @@ The Customer & Purchases API is designed to manage customer and purchase data. I
 ### **Get started**
 
 #### 1) Create your folder project
+
 `mkdir -p dutyfree/src/`
 
 #### 2) Create et activate virtual env
+
 `python3 -m venv .env`
 `.env/Scripts/activate`
 
 #### 3) Install dependancies
+
 `pip install -r requirement.txt`
 
 #### 4) Start local server
-`python manage.py runserver`
 
+`python manage.py runserver`
 
 ## 2. CLI Commands
 
@@ -45,20 +48,21 @@ You can upload data from CSV files using the CLI. Use the following command to s
 `python purchase_api_cli.py data/customers.csv data/purchases.csv "http://127.0.0.1:8000/v1/customers/"`
 
 **Send payload from json**
-- **Create your json payload**: `touch payload.json`
-- **Excecute following script**: `./post_customer.sh`
+
+- **Create and or use the json payload provided in data folder:**: `data/payload.json`
+- **Execute following script**: `./post_json_payload.sh`
 
 ## 3. Manage your database
 
 **Scripts to manage your objects**
 
-- **List all database objects**: `python dutyfree_api/list_all_objects.py`
-- **Delete all database objects**: `python dutyfree_api/delete_all_objects.py`
+- **List all database objects**: `./dutyfree_api/list_all_objects.py`
+- **Delete all database objects**: `./dutyfree_api/delete_all_objects.py`
 
 ## 4. Read your logs
+
 - **Log path**: `dutyfree_api/debug.log`
 
 ## 5. Minor issues
-- **Title outside payload provoke errors**
-- **Fix date format for the field *purchased_at***
+
 - **Fix hostname and routers**
