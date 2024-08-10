@@ -1,0 +1,85 @@
+[
+    {
+        "salutation": "Mr",
+        "lastname": "Norris",
+        "firstname": "Chuck",
+        "postal_code": "83600",
+        "city": "Fr\u00e9jus",
+        "email": "chuck@norris.com",
+        "purchases": [
+            {
+                "product_id": "4324",
+                "quantity": 1,
+                "price": 10.0,
+                "currency": "EUR",
+                "purchased_at": "2030-12-31"
+            }
+        ]
+    },
+    {
+        "salutation": "Mrs",
+        "lastname": "Galante",
+        "firstname": "Marie",
+        "postal_code": "",
+        "city": "",
+        "email": "marie-galante@france.fr",
+        "purchases": [
+            {
+                "product_id": "1221",
+                "quantity": 1,
+                "price": 10.0,
+                "currency": "EUR",
+                "purchased_at": "2017-12-31"
+            },
+            {
+                "product_id": "3213",
+                "quantity": 1,
+                "price": 10.0,
+                "currency": "EUR",
+                "purchased_at": "2030-12-31"
+            }
+        ]
+    },
+    {
+        "salutation": "Mr",
+        "lastname": "Barbier",
+        "firstname": "Christophe",
+        "postal_code": "75009",
+        "city": "Paris",
+        "email": "christophe@fake.email",
+        "purchases": [
+            {
+                "product_id": "75672",
+                "quantity": 1,
+                "price": 10.0,
+                "currency": "USD",
+                "purchased_at": "2050-12-31"
+            },
+            {
+                "product_id": "2123",
+                "quantity": 1,
+                "price": 10.0,
+                "currency": "EUR",
+                "purchased_at": "2017-08-01"
+            }
+        ]
+    },
+    {
+        "salutation": "Mrs",
+        "lastname": "",
+        "firstname": "",
+        "postal_code": null,
+        "city": null,
+        "email": null,
+        "purchases": []
+    },
+    {
+        "salutation": "Mr",
+        "lastname": "Dupont",
+        "firstname": "Eric",
+        "postal_code": "21000",
+        "city": "Dijon",
+        "email": "eric.dupont@bourgogne.fr",
+        "purchases": []
+    }
+]
