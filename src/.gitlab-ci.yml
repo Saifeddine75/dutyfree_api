@@ -1,0 +1,85 @@
+stages:
+  - build
+  - test
+  - release
+  - deploy
+
+  build:
+    tags:
+      - vm-shell
+    stage: build
+    script:
+      - echo "Building the application"
+      - echo "Creating virtual environment for the project..."
+      - virtualenv $(pwd)/venv
+      - source $(pwd)/venv/bin/activate
+      - echo "Installing requirements..."
+      - pip install -r requirements.txt
+      - deactivate
+    artifacts:
+      paths:
+        - $(pwd)/venv
+
+  test:
+    tags:
+      - vm-shell
+    stage: test
+    script:
+      - echo "Testing the application"
+      - echo "Activate virtual environment..."
+      - source $(pwd)/venv/bin/activate
+      - echo "Running the application tests..."
+      - python manage.py test dutyfree_api
+      - echo "Run Server in localhost..."
+      - python manage.py runserver &
+      - sleep 10
+      - curl -sSf http://localhost:8000/v1/customers/ > /dev/null && echo "Server run sucessfully!"
+      - sudo pkill python
+      - deactivate
+      - rm nohup.out
+      - echo "All tests successfully passed."
+
+  variables:
+    CONTAINER_IMAGE: $CI_REGISTRY_IMAGE:$CI_PIPELINE_IID
+
+  release:
+    tags:
+      - vm-shell
+    stage: release
+    before_script:
+      - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    script:
+      - echo "Building Docker image..."
+      - docker build -t $CONTAINER_IMAGE.
+      - echo "Pushing Docker image to registry..."
+      - docker push $CONTAINER_IMAGE
+    after_script:
+      - echo "Application deployed successfully!"
+      - docker logout
+
+  deploy:
+      tags:
+      - vm-shell
+    stage: deploy
+    before_script:
+      - mkdir -p ~/.ssh
+      - echo "$SSH_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+      - chmod 400 $SSH_KEY
+      - ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
+    script:
+      - echo "Deploying the application"
+      - echo "Establishing SSH connection..."
+      - ssh -o StrictHostKeyChecking=no -i $SSH_KEY $SSH_USER "
+          docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+          docker run -d -p 8000:8000 $CONTAINER_IMAGE"
+      - 
+      # - "@docker stop $(docker ps -a -q) || true"
+      # - "@docker rm $(docker ps -a -q) || true"
+      # - "@docker rmi -f $CONTAINER_IMAGE || true"
+      # - "@docker build -t $CONTAINER_IMAGE ."
+      # - "@docker push $CONTAINER_IMAGE"
+      # - "@docker run -d -p 8000:8000 $CONTAINER
+      # - echo "Application deployed successfully!"
+      # - echo "Application URL: http://$(docker-machine ip default):8000/
+      # - echo "SSH connection closed."
+      # - exit 0
