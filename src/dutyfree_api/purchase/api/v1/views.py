@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.generics import ListCreateAPIView
 from .serializers import CustomerSerializer
-from .models import Customers
+from purchase.models import Customers
 
 class CustomerCreateListAPIView(ListCreateAPIView):
     queryset = Customers.objects.all()

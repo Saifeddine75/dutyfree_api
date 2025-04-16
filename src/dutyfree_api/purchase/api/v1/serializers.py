@@ -1,6 +1,6 @@
 from datetime import datetime
 from rest_framework import serializers
-from .models import Customers, Purchases
+from purchase.models import Customers, Purchases
 
 class PurchaseSerializer(serializers.ModelSerializer):
     purchased_at = serializers.DateTimeField(source='purchased_date', format='%Y-%m-%d')
