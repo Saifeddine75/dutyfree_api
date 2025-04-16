@@ -7,7 +7,7 @@ __pycache__/
 *.pyc
 
 # Database
-db.slite3
+db.sqlite3
 
 # Logs
 debug.log
@@ -19,4 +19,5 @@ debug.log
 !**/migrations/__init__.py
 
 # VsCode
+settings.json
 .TODO
