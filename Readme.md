@@ -25,21 +25,22 @@ _For our test we will use the Customer Test Endpoint but if we deploy the Custom
 
 ### **Get started**
 
-#### 1) Open your folder project
+#### a. Open your folder project
 
-`cd dutyfree_api/src/`
+`cd dutyfree_api/`
 
-#### 2) Create et activate virtual env
+#### b. Create et activate virtual env
 
-`python3 -m venv .env`
+`python3 -m venv .venv`
 `.env/Scripts/activate`
 
-#### 3) Install dependancies
+#### c. Install dependancies
 
 `pip install -r requirement.txt`
 
-#### 4) Start local server
+#### d. Start local server
 
+`cd src/dutyfree_api/`
 `python manage.py runserver`
 
 ## 2. CLI Commands
