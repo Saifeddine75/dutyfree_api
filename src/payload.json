@@ -1,0 +1,39 @@
+[
+    {
+        "salutation": "Mr.",
+        "lastname": "Marc",
+        "firstname": "Johnson",
+        "email": "marc.johnson@example.com",
+        "purchases": [
+            {
+            "product_id": "75",
+            "price": 10,
+            "currency": "dollars",
+            "quantity": 1,
+            "purchased_at": "2023-01-01"
+            },
+            {
+            "product_id": "144",
+            "price": 20,
+            "currency": "dollars",
+            "quantity": 2,
+            "purchased_at": "2023-01-02"
+            }
+        ]
+    },
+    {
+        "salutation": "Mrs.",
+        "lastname": "Thomas",
+        "firstname": "Muller",
+        "email": "thomas.muller@example.com",
+        "purchases": [
+            {
+            "product_id": "541",
+            "price": 30,
+            "currency": "dollars",
+            "quantity": 3,
+            "purchased_at": "2023-01-03"
+            }
+        ]
+    }
+]
