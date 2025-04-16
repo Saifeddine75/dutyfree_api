@@ -48,7 +48,7 @@ _For our test we will use the Customer Test Endpoint but if we deploy the Custom
 **Send Payload from CSV**
 
 You can upload data from CSV files using the CLI. Use the following command to send customer and purchase data:
-`python purchase_api_cli.py data/customers.csv data/purchases.csv "http://127.0.0.1:8000/v1/customers/"`
+`python purchase_api_cli data/customers.csv data/purchases.csv "http://127.0.0.1:8000/v1/customers/"`
 
 **Send payload from json**
 
