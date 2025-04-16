@@ -1,10 +1,22 @@
+# Environnement
 .env
+.venv
 
+# Cache
 __pycache__/
 *.pyc
-*/migrations
+
+# Database
+db.slite3
+
+# Logs
+debug.log
 
 # Only for Development
+*/migrations
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+
+# VsCode
+.TODO
