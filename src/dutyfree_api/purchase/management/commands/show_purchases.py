@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from purchase.models import Purchases
 
+
 class Command(BaseCommand):
     help = "Display all purchases"
 

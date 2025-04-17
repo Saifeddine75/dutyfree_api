@@ -3,11 +3,14 @@ from purchase.models import Customers
 
 
 class Command(BaseCommand):
-    help = "Display all customers"
+    help = "Display all customers and purchases"
 
     def handle(self, *args, **kwargs):
-        customers_list = Customers.objects.all()
 
-        self.stdout.write("📋 Customers:")
+        print("Deleting all customers...")
+        customers_list = Customers.objects.all().delete()
+        print(Customers.objects.all())
+
+        self.stdout.write("📋 Customers deleted:")
         for customer in customers_list:
             self.stdout.write(str(customer))

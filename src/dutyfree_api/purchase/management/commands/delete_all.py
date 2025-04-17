@@ -6,8 +6,13 @@ class Command(BaseCommand):
     help = "Display all customers and purchases"
 
     def handle(self, *args, **kwargs):
-        customers_list = Customers.objects.all()
-        purchases_list = Purchases.objects.all()
+
+        print("Deleting all customers...")
+        customers_list = Customers.objects.all().delete()
+        print(Customers.objects.all())
+        print("Deleting all purchases...")
+        purchases_list = Purchases.objects.all().delete()
+        print(Purchases.objects.all())
 
         self.stdout.write("📋 Customers:")
         for customer in customers_list:
