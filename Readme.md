@@ -55,17 +55,30 @@ You can upload data from CSV files using the CLI. Use the following command to s
 - **Create and or use the json payload provided in data folder:**: `data/payload.json`
 - **Execute following script**: `./post_json_payload.sh`
 
-## 3. Manage your database
-
-**Scripts to manage your objects**
-
-- **List all database objects**: `./dutyfree_api/list_all_objects.py`
-- **Delete all database objects**: `./dutyfree_api/delete_all_objects.py`
-
-## 4. Read your logs
+## 3. Read your logs
 
 - **Log path**: `dutyfree_api/debug.log`
 
-## 5. Minor issues
+## 4. Unit tests
 
-- **Test production host url**
+`cd dutyfree_api/src/dutyfree_api`
+`pytest tests`
+
+## 5. Manage your database easily
+
+**Scripts to manage your objects**
+
+**Initialize Database**
+
+- **Generate random customers purchases objects**: `python manage.py generate_purchases`
+
+**List records**
+
+- **List all database objects**: `python manage.py list_all`
+- **List all customers objects**: `python manage.py list_customers`
+- **List all purchases objects**: `python manage.py list_purchases`
+
+**Delete records**
+- **Delete all database objects**: `python manage.py delete_all`
+- **Delete all customers objects**: `python manage.py delete_customers`
+- **Delete all purchases objects**: `python manage.py delete_purchases`
