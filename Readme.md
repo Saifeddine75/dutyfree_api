@@ -1,84 +1,117 @@
-# Customer & Purchases API
+# 📦 Customer & Purchases API
 
-Welcome to the Customer & Purchases API documentation. This API is built using Django REST Framework (DRF) and allows for managing customer and purchase data effectively.
+Welcome to the **Customer & Purchases API**, a Django REST Framework-based application for managing customers and their purchase records.
 
-## 1. Overview
+---
 
-The Customer & Purchases API is designed to manage customer and purchase data. It provides endpoints to create and list customers and handle their purchases.
+## 🚀 Overview
 
-### **Models**
+This API provides endpoints for:
 
-- **Customer**: Represents a customer in the system.
-- **Purchase**: Represents a purchase made by a customer.
+- Creating and listing **customers**
+- Submitting and retrieving **purchase** data
 
-### **Views**
+### 🧩 Models
 
-- **CustomerCreateListViewSet**: Handles creating new customers and listing existing ones.
+- **Customer**: Represents a client in the system  
+- **Purchase**: Represents a transaction made by a customer
 
-### **API Endpoints**
+### 📡 Views
 
-- **Base URL**: `https://yourhostname.com/v1/`
-- **Customer Endpoint**: `https://yourhostname.com/v1/customers/`
-- **Customer Test Endpoint**: `http://127.0.0.1:8000/v1/customers/`
+- `CustomerCreateListViewSet`: Handles customer creation and listing
 
-_For our test we will use the Customer Test Endpoint but if we deploy the Customer Endpoint will be used_
+---
 
-### **Get started**
+## 🔗 API Endpoints
 
-#### a. Open your folder project
+| Endpoint Type        | URL |
+|----------------------|-----|
+| **Base URL**         | `https://yourhostname.com/v1/` |
+| **Production (Customer)** | `https://yourhostname.com/v1/customers/` |
+| **Local (Customer)** | `http://127.0.0.1:8000/v1/customers/` |
 
-`cd dutyfree_api/`
+For testing locally, use the local endpoint.
 
-#### b. Create et activate virtual env
+---
 
-`python3 -m venv .venv`
-`.env/Scripts/activate`
+## ⚙️ Getting Started
 
-#### c. Install dependancies
+1. **Navigate to project directory**
+   ```bash
+   cd dutyfree_api/
+   ```
 
-`pip install -r requirement.txt`
+2. **Create and activate a virtual environment**
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate  # or .env/Scripts/activate on Windows
+   ```
 
-#### d. Start local server
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-`cd src/dutyfree_api/`
-`python manage.py runserver`
+4. **Start the development server**
+   ```bash
+   cd src/dutyfree_api/
+   python manage.py runserver
+   ```
 
-## 2. CLI Commands
+---
 
-**Send Payload from CSV**
+## 🛠 CLI Usage
 
-You can upload data from CSV files using the CLI. Use the following command to send customer and purchase data:
-`python purchase_api_cli data/customers.csv data/purchases.csv "http://127.0.0.1:8000/v1/customers/"`
+### ✅ Upload Data from CSV
 
-**Send payload from json**
+```bash
+python purchase_api_cli data/customers.csv data/purchases.csv "http://127.0.0.1:8000/v1/customers/"
+```
 
-- **Create and or use the json payload provided in data folder:**: `data/payload.json`
-- **Execute following script**: `./post_json_payload.sh`
+### ✅ Send Payload from JSON
 
-## 3. Read your logs
+1. Edit or use the existing file: `data/payload.json`
+2. Execute:
+   ```bash
+   ./post_json_payload.sh
+   ```
 
-- **Log path**: `dutyfree_api/debug.log`
+---
 
-## 4. Unit tests
+## 📜 Logs
 
-`cd dutyfree_api/src/dutyfree_api`
-`pytest tests`
+All logs are saved in:
+```
+dutyfree_api/debug.log
+```
 
-## 5. Manage your database easily
+---
 
-**Scripts to manage your objects**
+## 🧪 Running Tests
 
-**Initialize Database**
+Run unit tests using `pytest`:
+```bash
+cd dutyfree_api/src/dutyfree_api/
+pytest tests
+```
 
-- **Generate random customers purchases objects**: `python manage.py generate_purchases`
+---
 
-**List records**
+## 🗃 Database Management Scripts
 
-- **List all database objects**: `python manage.py list_all`
-- **List all customers objects**: `python manage.py list_customers`
-- **List all purchases objects**: `python manage.py list_purchases`
+### 🔄 Initialize with Fake Data
+```bash
+python manage.py generate_purchases
+```
 
-**Delete records**
-- **Delete all database objects**: `python manage.py delete_all`
-- **Delete all customers objects**: `python manage.py delete_customers`
-- **Delete all purchases objects**: `python manage.py delete_purchases`
+### 📋 List Records
+
+- All records: `python manage.py list_all`
+- Customers: `python manage.py list_customers`
+- Purchases: `python manage.py list_purchases`
+
+### ❌ Delete Records
+
+- All records: `python manage.py delete_all`
+- Customers: `python manage.py delete_customers`
+- Purchases: `python manage.py delete_purchases`
